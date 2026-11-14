@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sending Status Disabled published by aws.ses",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "AWSEvent": {
+        "required": [
+          "account",
+          "detail",
+          "detail-type",
+          "id",
+          "region",
+          "resources",
+          "source",
+          "time",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "$ref": "#/components/schemas/SendingStatusDisabled"
+          },
+          "detail-type": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "region": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          }
+        },
+        "x-amazon-events-detail-type": "Sending Status Disabled",
+        "x-amazon-events-source": "aws.ses"
+      },
+      "SendingStatusDisabled": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AWS Insight via CloudTrail published by aws.ses",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "AWSEvent": {
+        "required": [
+          "account",
+          "detail",
+          "detail-type",
+          "id",
+          "region",
+          "resources",
+          "source",
+          "time",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "$ref": "#/components/schemas/AWSInsightviaCloudTrail"
+          },
+          "detail-type": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "region": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          }
+        },
+        "x-amazon-events-detail-type": "AWS Insight via CloudTrail",
+        "x-amazon-events-source": "aws.ses"
+      },
+      "AWSInsightviaCloudTrail": {
+        "type": "object",
+        "properties": {
+          "addendum": {
+            "type": "object",
+            "nullable": true
+          },
+          "awsRegion": {
+            "type": "string"
+          },
+          "edgeDeviceDetails": {
+            "type": "object"
+          },
+          "eventCategory": {
+            "type": "string"
+          },
+          "eventID": {
+            "type": "string"
+          },
+          "eventTime": {
+            "pattern": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventType": {
+            "type": "string"
+          },
+          "eventVersion": {
+            "type": "string"
+          },
+          "insightDetails": {
+            "type": "object",
+            "nullable": true
+          },
+          "recipientAccountId": {
+            "type": "string"
+          },
+          "sharedEventID": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AWS API Call via CloudTrail published by aws.ses",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "AWSAPICallviaCloudTrail": {
+        "type": "object",
+        "properties": {
+          "addendum": {
+            "type": "object",
+            "nullable": true
+          },
+          "additionalEventData": {
+            "type": "object",
+            "nullable": true
+          },
+          "annotation": {
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "awsRegion": {
+            "type": "string"
+          },
+          "edgeDeviceDetails": {
+            "type": "object"
+          },
+          "errorCode": {
+            "type": "string"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "eventCategory": {
+            "type": "string"
+          },
+          "eventContext": {
+            "type": "object"
+          },
+          "eventID": {
+            "type": "string"
+          },
+          "eventName": {
+            "type": "string"
+          },
+          "eventSource": {
+            "type": "string"
+          },
+          "eventTime": {
+            "pattern": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventType": {
+            "type": "string"
+          },
+          "eventVersion": {
+            "type": "string"
+          },
+          "managementEvent": {
+            "type": "boolean"
+          },
+          "readOnly": {
+            "type": "boolean"
+          },
+          "recipientAccountId": {
+            "type": "string"
+          },
+          "requestID": {
+            "type": "string"
+          },
+          "requestParameters": {
+            "type": "object",
+            "nullable": true
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "accountId": {
+                  "type": "string"
+                },
+                "ARN": {
+                  "type": "string"
+                },
+                "ARNPrefix": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "responseElements": {
+            "type": "object",
+            "nullable": true
+          },
+          "sessionCredentialFromConsole": {
+            "type": "string"
+          },
+          "sharedEventID": {
+            "type": "string"
+          },
+          "sourceIPAddress": {
+            "type": "string"
+          },
+          "tlsDetails": {
+            "type": "object",
+            "properties": {
+              "cipherSuite": {
+                "type": "string"
+              },
+              "clientProvidedHostHeader": {
+                "type": "string"
+              },
+              "keyExchange": {
+                "type": "string"
+              },
+              "tlsVersion": {
+                "type": "string"
+              }
+            }
+          },
+          "userAgent": {
+            "type": "string"
+          },
+          "userIdentity": {
+            "type": "object",
+            "properties": {
+              "accessKeyId": {
+                "type": "string"
+              },
+              "accountId": {
+                "type": "string"
+              },
+              "arn": {
+                "type": "string"
+              },
+              "credentialId": {
+                "type": "string"
+              },
+              "identityProvider": {
+                "type": "string"
+              },
+              "inScopeOf": {
+                "type": "object"
+              },
+              "invokedBy": {
+                "type": "string"
+              },
+              "invokedByDelegate": {
+                "type": "object"
+              },
+              "onBehalfOf": {
+                "type": "object",
+                "properties": {
+                  "identityStoreArn": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "principalId": {
+                "type": "string"
+              },
+              "sessionContext": {
+                "type": "object",
+                "properties": {
+                  "assumedRoot": {
+                    "type": "string"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {
+                      "creationDate": {
+                        "pattern": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "mfaAuthenticated": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "ec2IssuedInVPC": {
+                    "type": "string"
+                  },
+                  "ec2RoleDelivery": {
+                    "type": "string"
+                  },
+                  "sessionIssuer": {
+                    "type": "object",
+                    "properties": {
+                      "accountId": {
+                        "type": "string"
+                      },
+                      "arn": {
+                        "type": "string"
+                      },
+                      "principalId": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "userName": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "sourceIdentity": {
+                    "type": "string"
+                  },
+                  "webIdFederationData": {
+                    "type": "object",
+                    "properties": {
+                      "attributes": {
+                        "type": "object"
+                      },
+                      "federatedProvider": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "type": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              }
+            }
+          },
+          "vpcEndpointAccountId": {
+            "type": "string"
+          },
+          "vpcEndpointId": {
+            "type": "string"
+          }
+        }
+      },
+      "AWSEvent": {
+        "required": [
+          "account",
+          "detail",
+          "detail-type",
+          "id",
+          "region",
+          "resources",
+          "source",
+          "time",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "$ref": "#/components/schemas/AWSAPICallviaCloudTrail"
+          },
+          "detail-type": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "region": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          }
+        },
+        "x-amazon-events-detail-type": "AWS API Call via CloudTrail",
+        "x-amazon-events-source": "aws.ses"
+      }
+    }
+  }
+}

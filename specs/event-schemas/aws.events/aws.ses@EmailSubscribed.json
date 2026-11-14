@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Email Subscribed published by Simple Email Service (SES)",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "AWSEvent": {
+        "required": [
+          "account",
+          "detail",
+          "detail-type",
+          "id",
+          "region",
+          "resources",
+          "source",
+          "time",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "$ref": "#/components/schemas/EmailSubscribed"
+          },
+          "detail-type": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "region": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          }
+        },
+        "x-amazon-events-detail-type": "Email Subscribed",
+        "x-amazon-events-source": "aws.ses"
+      },
+      "EmailSubscribed": {
+        "type": "object"
+      }
+    }
+  }
+}
